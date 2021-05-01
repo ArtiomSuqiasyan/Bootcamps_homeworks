@@ -1,7 +1,7 @@
 function divisible(num) {
-    if(num === 0){
-        return "Cannot calculate"
-    }
+  if (num === 0) {
+    return "Cannot calculate";
+  }
   let product = 1;
   let sum = 0;
   while (num) {
@@ -10,10 +10,13 @@ function divisible(num) {
     product *= digit;
     sum += digit;
   }
+  if (product === 0) {
+    return "Cannot calculate";
+  }
   if (product % sum === 0) {
     return "Quotent is " + product / sum;
   }
-  return "Reminder is " + product % sum;
+  return "Reminder is " + (product % sum);
 }
 
 console.log(divisible(3366));

@@ -4,8 +4,11 @@ function sortNumbers(num1, num2, num3) {
     arr.push(arguments[i]);
   }
   arr.sort((a, b) => a - b);
-  [num1, num2, num3] = arr;
+  let min;
+  let mid;
+  let max;
+  [min, mid, max] = arr;
   console.log(num1, num2, num3);
 }
 
-sortNumbers(25, 26, 22);
+sortNumbers(min, mid, max);

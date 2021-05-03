@@ -24,8 +24,8 @@
 // parseInt('0x77a') ==> 1914
 // parseInt('I’m the best value - said Infinity.') ==> NaN
 // parseFloat('I’m the best value - said Infinity.') ==> NaN
-// parseInt('Infinity is the best value!') ==> NaN
-// parseFloat('Infinity is the best value!') ==> Infinity
+// parseInt('Infinity is the best value!') ==> Infinity
+// parseFloat('Infinity is the best value!') ==> NaN
 // parseFloat('12.78ff') ==> 12.78
 
 

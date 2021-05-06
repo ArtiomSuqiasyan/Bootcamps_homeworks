@@ -3,4 +3,4 @@ function checkIsogram (str){
     return str.length === new Set(str).size;
 }
 
-console.log(checkIsogram ("strsa"))
+console.log(checkIsogram ("strs"))

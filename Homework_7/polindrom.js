@@ -3,4 +3,4 @@ function checkPolindrom (str){
     return str === reverseStr
 }
 
-console.log(checkPolindrom("adfda"))
+console.log(checkPolindrom("dadfdad"))

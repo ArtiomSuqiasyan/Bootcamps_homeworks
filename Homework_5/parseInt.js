@@ -17,6 +17,13 @@ function parsing(str, type = 10, convert = 10) {
   }
 
   if (type === 2) {
+    for(let i = 0; i < str.length; i++){
+      if(str[i] === "0" || str[i] === "1"){
+        continue
+      } else{
+        return "Invalid number"
+      }
+    }
     let pow = 0;
     result10 = +result10;
     for (let i = str.length - 1; i >= 0; i--) {
@@ -26,6 +33,11 @@ function parsing(str, type = 10, convert = 10) {
   }
 
   if (type === 8) {
+    for(let i = 0; i < str.length; i++){
+      if(str[i] === "9" || isNaN(str[i])){
+       return "Invalid number"
+      }
+    }
     result10 = +result10
     let pow = 0;
     for (let i = str.length - 1; i >= 0; i--) {
@@ -61,4 +73,4 @@ function parsing(str, type = 10, convert = 10) {
   }
 }
 
-console.log(parsing("100101010", 2, 8));
+console.log(parsing("100010", 8, 10));

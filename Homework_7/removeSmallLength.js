@@ -4,4 +4,4 @@ function filterByLength(arr){
 }
 
 
-console.log(filterByLength(["kia", "tesla", "bmw", "mercedes"]));
+console.log(filterByLength(["kia", "tesla", "bmw", "mercedes", "IO"]));

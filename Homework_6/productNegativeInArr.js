@@ -3,7 +3,7 @@ function negativeNum(arr) {
   for (let i = 0; i < arr.length; i++) {
     let maxNegative = -Infinity;
     for (let j = 0; j < arr[i].length; j++) {
-      if (arr[i].length === undefined) {
+      if (typeof arr[i] !== "object") {
         return "Invalid Argument";
       }
       if (arr[i][j] < 0 && Math.abs(arr[i][j]) < Math.abs(maxNegative)) {

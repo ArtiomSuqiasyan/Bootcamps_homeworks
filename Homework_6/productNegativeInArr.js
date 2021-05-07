@@ -1,24 +1,31 @@
 function negativeNum(arr) {
-  let sum = 0;
-  let maxMin = -Infinity;
-
+  let maxNegativeNums = [];
   for (let i = 0; i < arr.length; i++) {
+    let maxNegative = -Infinity;
     for (let j = 0; j < arr[i].length; j++) {
-      if (arr[i][j].length === undefined) {
+      if (arr[i].length === undefined) {
         return "Invalid Argument";
       }
-      if (arr[i][j] < 0) {
-        sum += arr[i][j];
+      if (arr[i][j] < 0 && Math.abs(arr[i][j]) < Math.abs(maxNegative)) {
+        maxNegative = arr[i][j];
+        maxNegativeNums[i] = maxNegative;
       }
     }
-    if (sum < 0 && sum > maxMin) {
-      maxMin = sum;
-    }
-    sum = 0;
   }
-  if (maxMin === -Infinity) {
-    return "No negatives";
+  let filtredNegative = maxNegativeNums.filter(() => true);
+  if (filtredNegative.length < 2) {
+    return "Cannot calculate";
   }
-  return Math.abs(maxMin);
+  let max = Math.max(...filtredNegative);
+  let idx = filtredNegative.indexOf(max, 1);
+  filtredNegative.splice(idx, 1);
+  let secMax = Math.max(...filtredNegative);
+  return max * secMax;
 }
-console.log(negativeNum([[1, 2], [1, 2, 3], [1, 2], 5]));
+console.log(
+  negativeNum([
+    [1, -20, -8],
+    [1, 2],
+    [1, -2],
+  ])
+);

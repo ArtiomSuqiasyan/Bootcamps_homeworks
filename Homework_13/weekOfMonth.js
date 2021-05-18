@@ -1,7 +1,7 @@
-const getWeekOfMonth = (date) => {
-  let day = date.getDate();
-  return day;
+const weekOfMonth = (date) => {
+  let idx = date.getDay();
+  let day = date.getDate() - idx + 6;
+  return Math.ceil(day / 7);
 };
-const result = getWeekOfMonth(new Date(2017, 10, 9));
-const weekOfMonth = Math.ceil(result / 7);
-console.log(weekOfMonth);
+
+console.log(weekOfMonth(new Date(2021, 7, 8)));
